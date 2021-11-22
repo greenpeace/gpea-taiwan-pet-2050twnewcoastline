@@ -1,0 +1,13 @@
+<svg id="menu_close_big" data-name="menu / close_big" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76" height="75" viewBox="0 0 76 75">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="menu_close_big_Background_Mask_" data-name="menu / close_big (Background/Mask)" width="76" height="75" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="menu_close_big-2" data-name="menu / close_big">
+    <rect id="menu_close_big_Background_Mask_2" data-name="menu / close_big (Background/Mask)" width="76" height="75" fill="none"/>
+    <g id="menu_close_big-3" data-name="menu / close_big" clip-path="url(#clip-path)">
+      <path id="menu_close_big-4" data-name="menu / close_big" d="M39.868,0l-17.7,17.469L4.465,0,0,4.406,17.7,21.875,0,39.344,4.465,43.75l17.7-17.469,17.7,17.469,4.465-4.406-17.7-17.469,17.7-17.469Z" transform="translate(15.833 15.625)" fill="#c6c6c6"/>
+    </g>
+  </g>
+</svg>

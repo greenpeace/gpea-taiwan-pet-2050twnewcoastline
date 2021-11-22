@@ -1,0 +1,13 @@
+<svg id="basic_help_questionmark" data-name="basic / help_questionmark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.523" height="31.149" viewBox="0 0 28.523 31.149">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="basic_help_questionmark_Background_Mask_" data-name="basic / help_questionmark (Background/Mask)" width="28.523" height="31.149" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="basic_help_questionmark-2" data-name="basic / help_questionmark">
+    <rect id="basic_help_questionmark_Background_Mask_2" data-name="basic / help_questionmark (Background/Mask)" width="28.523" height="31.149" fill="none"/>
+    <g id="basic_help_questionmark-3" data-name="basic / help_questionmark" clip-path="url(#clip-path)">
+      <path id="basic_help_questionmark-4" data-name="basic / help_questionmark" d="M8.319,25.957H4.753V22.064H8.319v3.892Zm0-6.489H4.753v-.01c0-2.141,0-3.99.8-5.287a7.709,7.709,0,0,1,2.276-2.1,13.493,13.493,0,0,0,1.087-.815A5.08,5.08,0,0,0,10.5,6.292a3.594,3.594,0,0,0-3.365-2.4A3.444,3.444,0,0,0,4.61,5.034,4.112,4.112,0,0,0,3.565,7.788H0A8.107,8.107,0,0,1,2.089,2.281,6.792,6.792,0,0,1,7.131,0a7.153,7.153,0,0,1,6.458,4.368,8.387,8.387,0,0,1-1.109,8.182,10.98,10.98,0,0,1-1.8,1.736,8.913,8.913,0,0,0-1.564,1.509,5.894,5.894,0,0,0-.8,3.672Z" transform="translate(7.131 2.596)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>2050 臺灣新海線｜海平面上升淹溢地區查詢平台</title>
+    <meta name="description" content="氣候變遷導致全球暖化、海平面上升，在過去一百多年， 全球平均海平面高度上升了0.19 公尺，根據綠色和平研究報告顯示，若不積極減碳，30 年後，臺灣可能產生新的海岸線...">
+    <meta property="og:title" content="2050 臺灣新海線｜海平面上升淹溢地區查詢平台">
+    <meta property="og:type" content="website">
+    <style>
+      .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+      
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      
+        z-index: 2000;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: #84BFF1;
+        overflow: hidden;
+        background-image: url("images/loading.png");
+        background-size: 285px auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .pace:before{
+        content: "";
+        display: block;
+        width: 150px;
+        height: 18px;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-image: url("images/gp-logo.png");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width:780px){
+        .pace{
+          background-size: 50vw auto;
+        }
+        .pace:before{
+          width: 26.9vw;
+          height: 3.2vw;
+        }
+      }
+      .pace .pace-progress{
+        position: absolute;
+        width: 100%;
+        top: 20%;
+        transform: translate3d(0, 0 ,0)!important;
+        text-align: center;
+        font-family: 'Lato', 'Noto Sans TC', "PingFang TC", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        line-height: 1.8em;
+        color: white;
+      }
+      
+      @keuframes loading{
+        0%{
+          content: ".";
+        }
+        50%{
+          content: "..";
+        }
+        100%{
+          content: "...";
+        }
+      }
+      .pace.pace-inactive {
+        opacity: 0;
+        top: -120%;
+        height: 0;
+        transition: opacity .3s, top 0s .3s, height 0s .3s;
+      }
+    </style>
+    <script>
+      paceOptions = {
+        elements: {
+            selectors: ['body', '.map__iframe', '#BGVideo']
+        }
+      }
+    </script>
+    <script src="js/pace.min.js"></script>
+    <script>
+      var loadingTimer;
+      Pace.on('start', function(){
+        var counter = 0;
+        loadingTimer = setInterval(function(){
+          counter+=1;
+          var dot = ".";
+          switch (counter%3){
+            case 0:
+              dot=".";
+              break;
+            case 1:
+              dot="..";
+              break;
+            case 2:
+              dot="...";
+              break;
+          }
+          document.querySelector('.pace-progress').innerHTML = dot+"<br>LOADING";
+          
+        }, 500);
+      })
+      Pace.on('done',function(){
+        clearInterval(loadingTimer);
+        //console.log('pace done')
+      });
+    </script>
+    <meta property="og:url" content="https://change.greenpeace.org.tw/2021/petition/2050twnewcoastline">
+    <meta property="og:image" content="https://change.greenpeace.org.tw/2021/petition/2050twnewcoastline/images/preview.jpg">
+    <meta property="og:description" content="全球暖化、海平面上升，30 年後你家還在嗎？臺灣會不會產生新的海岸線？">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&amp;family=Noto+Sans+TC:wght@100;300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="js/swiper-bundle.min.css">
+    <link rel="stylesheet" href="js/nice-select.css">
+    <link rel="stylesheet" href="js/aos.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/aos.js"></script>
+	<script>        
+      var dataLayer = window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+          'gCampaign' : 'climate',
+          'gBasket' : 'climate-newcoastline'
+      });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRM6WK6');</script>
+    <!-- End Google Tag Manager -->  
+  </head>
+  <body>
+    <!--video(autoplay, playsinline, muted, src="video/loop.mp4")-->
+    <div class="wrap">
+      <header class="header">
+        <div class="inner"> <a class="menu-btn" href="#" title="menu"></a></div>
+      </header>
+      <nav class="nav">
+        <div class="nav__cover"></div>
+        <div class="nav__container"> <a class="nav__close" href="#" title="close menu"></a>
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#index" data-to="index">首頁 </a></li>
+            <li class="nav__item"><a class="nav__link" href="#coast" data-to="coast">未來海平面與暴潮衝擊 </a></li>
+            <li class="nav__item"><a class="nav__link" href="#sign" data-to="sign">氣候緊急連署 </a></li>
+            <li class="nav__item"><a class="nav__link" href="#place" data-to="place">新海線巡禮護照 </a></li>
+            <li class="nav__item"><a class="nav__link" href="#serch" data-to="search">淹溢查詢 </a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="index" id="index">
+        <div class="index__bg"> 
+          <video id="BGVideo" preload autoplay muted loop playsinline>
+            <source src="video/loop-pc.mp4" type="video/mp4" media="all and (min-width:780px)">
+            <source src="video/loop-mb.mp4" type="video/mp4" media="all and (max-width:780px)">
+          </video>
+        </div>
+        <div class="index__content">
+          <div class="inner">
+            <h1 class="main-title"><span class="main-title__year hide-text"></span><span class="main-title__text hide-text">2050 台灣新海線</span><span class="main-title__logo hide-text"></span></h1>
+            <div class="index__arrow mb-show"></div>
+            <div class="index-intro" data-aos="fade-up">
+              <h2 class="index-intro__subtitle">全球暖化</h2>
+              <p class="index-intro__main">
+                海平面正以每年 <strong>1.9</strong> 公釐速度上升<br><strong>30</strong> 年後，臺灣會不會產生新的海岸線？</p>
+              <div class="index__arrow mb-hide"></div>
+            </div>
+            <div class="photo mb-show" data-aos="fade-up">
+              <div class="photo__slider swiper-container" id="photoSlider"> 
+                <div class="swiper-wrapper"> 
+                  <div class="photo__slide swiper-slide" style="background-image: url(images/pic01.jpg);"></div>
+                  <div class="photo__slide swiper-slide" style="background-image: url(images/pic02.jpg);"></div>
+                  <div class="photo__slide swiper-slide" style="background-image: url(images/pic03.jpg);"></div>
+                </div>
+                <div class="swiper-pagination photo__pagi"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overview" id="coast">
+        <div class="inner">
+          <div class="overview__block">
+            <div class="overview__content" id="coastMove">
+              <h2 class="overview__title" data-aos="fade-up" data-aos-anchor="#coastMove">氣候變遷，<br>改變臺灣海岸線</h2>
+              <p class="overview__desc" data-aos="fade-up" data-aos-anchor="#coastMove" data-aos-delay="300">臺灣受到地理位置與洋流影響，海平面上升速度為全球平均值的 <strong>2</strong> 倍，綠色和平以美國中央氣候研究組織 Climate Central 模型，模擬出 <strong>2050</strong> 年不積極減碳情境下，臺灣的海平面上升與暴潮衝擊， 結果發現：</p>
+            </div>
+            <div class="overview__pic" data-aos="fade-up" data-aos-anchor="#coastMove" data-aos-delay="600">
+              <div class="overview-tw">
+                <div class="overview-tw__cont overview-tw__cont--1" data-aos-id="counter-1" data-aos="fade" data-aos-anchor="#coastMove" data-aos-delay="800">
+                  <p class="overview__desc overview-tw__desc"><strong class="counter" data-max="293">293</strong>萬<br>全臺可能受影響人數</p>
+                </div>
+                <div class="overview-tw__cont overview-tw__cont--2" data-aos-id="counter-2" data-aos="fade" data-aos-anchor="#coastMove" data-aos-delay="1200">
+                  <p class="overview__desc overview-tw__desc"><strong class="counter" data-max="2120">2120</strong>平方公里<br>全臺淹溢面積</p>
+                </div>
+                <div class="overview-tw__cont overview-tw__cont--3" data-aos-id="counter-3" data-aos="fade" data-aos-anchor="#coastMove" data-aos-delay="1500">
+                  <p class="overview__desc overview-tw__desc"><strong class="counter" data-max="100">100</strong>個以上<br>受威脅的歷史古蹟</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sign" id="sign">
+        <h2 class="sign__title" data-aos="fade-in">守住臺灣海岸線：<br><br><strong>要求縣市長宣示氣候緊急</strong></h2>
+        <div class="sign__intro" data-aos="fade" data-aos-anchor-placement="top-center">
+          <div class="sign__photo"> <img src="images/sign-101.jpg" alt="101"></div>
+          <div class="sign__content"> 
+            <p class="sign__desc">
+              您知道嗎？全球已有超過 1,700 個不同層級的政府宣示氣候緊急狀態，<strong>臺灣也有新北市、台中市與台東縣政府的響應，我們還需要更多縣市加入！</strong><br><br>請連署支持綠色和平的氣候緊急倡議行動，推動臺灣中央與地方政府訂出更具野心的減碳目標與綠電發展規劃，追上國際低碳治理的潮流。</p><a class="btn sign__what-btn mb-hide" href="#" data-box="emergencyBox"> <span class="ques-icon"> </span><span class="btn-text">什麼是氣候緊急</span></a>
+          </div>
+        </div>
+        <div class="sign__form form">
+          <div class="inner">
+		  <form id="sign-form" action="https://cors-anywhere.small-service.gpeastasia.org/https://cloud.greentw.greenpeace.org/pp_campaign" method="POST">
+            <div class="form__container">
+              <div class="form__intro" data-aos="fade" data-aos-anchor-placement="top-center">
+                <p class="form__desc">我來自<span class="form__select-wrap">
+					<select class="form__select" id="selectArea">
+                      <option>臺北市</option>
+                      <option>新北市</option>
+                      <option>基隆市</option>
+                      <option>桃園市</option>
+                      <option>新竹縣</option>
+                      <option>新竹市</option>
+                      <option>苗栗縣</option>
+                      <option>臺中市</option>
+                      <option>南投縣</option>
+                      <option>彰化縣</option>
+                      <option>雲林縣</option>
+                      <option>嘉義縣</option>
+                      <option>嘉義市</option>
+                      <option>臺南市</option>
+                      <option>高雄市</option>
+                      <option>屏東縣</option>
+                      <option>宜蘭縣</option>
+                      <option>花蓮縣</option>
+                      <option>臺東縣</option>
+                      <option>澎湖縣</option>
+                      <option>金門縣</option>
+                      <option>連江縣</option>
+                    </select></span>，
+                  <br><br>我要求<span class="mayor">臺北市</span>長正視氣候問題！
+                  <br><br>發揮地方影響力、宣示氣候緊急
+                  <br>為下一代打造一個永續宜居的韌性城市。
+                </p><img class="form__pic" src="images/sign-mountain.jpg">
+              </div>
+              <div class="form__main" data-aos="fade" data-aos-anchor-placement="top-center">
+                <ul class="form__list"> 
+                  <li class="form__item">
+                    <label class="form__label">電子信箱</label>
+					<input class="form__input email" type="email" name="Email" id="Email" required>
+                  </li>
+                  <li class="form__item">
+                    <div class="form__group">
+                      <div class="form__wrap form__wrap--small">
+                        <label class="form__label">姓氏</label>
+						<input class="form__input" type="text" name="LastName" id="LastName" required>
+                      </div>
+                      <div class="form__wrap">
+                        <label class="form__label">名字</label>
+						<input class="form__input" type="text" name="FirstName" id="FirstName" required>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="form__item">
+                    <label class="form__label">出生年份</label>                    
+					<select class="form__input" name="Birthdate" id="Birthdate" placeholder="出生年份" required>
+                      <option value="">選擇年份</option>
+                    </select>
+                  </li>
+                  <li class="form__item">
+                    <label class="form__label">電話</label>                    
+					<input class="form__input taiwan-phone" type="text" name="MobilePhone" id="MobilePhone" required>
+                  </li>
+                  <li class="form__item">
+                    <div class="form__check"> 
+					  <input class="form__agree" type="checkbox" name="OptIn" id="OptIn" checked>
+                      <label class="form__check-label" for="OptIn">我要即時收到最新專案訊息，知道更多參與和協助的方法！綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考</label><a class="form__check-a" href="https://www.greenpeace.org/taiwan/policies/privacy-and-cookies/?ref=2021-climate-newcoastline_form" target="_blank">隱私保護政策</a>。
+                    </div>
+                  </li>
+				  <input placeholder="MobileCountryCode" name="MobileCountryCode" type="hidden" value="886">
+                  <input type="hidden" name="req" value="post_data">
+                  <input type="hidden" name="LeadSource" value="Petition - Climate">
+                  <input type="hidden" name="Petition_Interested_In_Arctic__c" value="false">
+                  <input type="hidden" name="Petition_Interested_In_Climate__c" value="true">
+                  <input type="hidden" name="Petition_Interested_In_Forest__c" value="false">
+                  <input type="hidden" name="Petition_Interested_In_Health__c" value="false">
+                  <input type="hidden" name="Petition_Interested_In_Oceans__c" value="false">
+                  <input type="hidden" name="Petition_Interested_In_Plastics__c" value="false">
+                  <input type="hidden" name="CampaignId" value="7012u000000OzRxAAK">
+                  <input type="hidden" name="UtmMedium" id="UtmMedium" value="">
+                  <input type="hidden" name="UtmSource" id="UtmSource" value="">
+                  <input type="hidden" name="UtmCampaign" id="UtmCampaign" value="">
+                  <input type="hidden" name="UtmContent" id="UtmContent" value="">
+                  <input type="hidden" name="UtmTerm" id="UtmTerm" value="">
+                  <input type="hidden" name="DonationPageUrl" value="">	
+                </ul>
+                <div class="form__bottom">
+				 <button class="form__btn form__btn--submit" id="submitBtn" type="submit">我要連署</button>
+				</div>
+              </div>
+              <div class="form__done done" style="display:none;">
+                <p class="done__title">Thank you!<strong>感謝您加入連署，<br class="mb-show">一同要求決策者正視氣候問題！</strong></p>
+                <p class="done__desc">
+                  未來三年，全球綠色和平將投入更多資源去減緩氣候變遷，包含持續關注極端氣候事件，向無視氣候危機的政府、企業問責，同時向全球化石燃料企業施壓；在臺灣，我們已展開氣候教育，提升下一代的氣候危機意識，並監督用電大戶條款與溫管法的修法，要求臺灣用電大戶需負起相應的環境責任，積極轉用再生能源。環境運動並非一蹴可幾，但只要堅持下去，必能迎來轉機。<br><br><strong>您的連署支持就是改善氣候問題的第一步，也邀請您多走一步，將連署分享給親朋好友，壯大臺灣的氣候運動社群！</strong><br><br></p>
+                <p class="done__control">分享至：<a class="done__share" id="shareFB" href="" target="_blank"> <span class="fb-icon"></span></a><a class="done__share" id="shareLINE" href="" target="_blank"><span class="line-icon"></span></a></p>
+				<div class="line-div is-show-at-dd-page-only">				
+					<div class="line-tp">
+						<a href='http://act.gp/GPLINE_tp' target='_blank'>加入我們的 LINE 好友<br>
+						<img src="images/act.gp_GPLINE_tp.png" /></a>
+					</div>
+					<div class="line-tc">
+						<a href='http://act.gp/GPLINE_tc' target='_blank'>加入我們的 LINE 好友<br>
+						<img src="images/act.gp_GPLINE_tc.png" /></a>
+					</div>
+					<div class="line-ks">
+						<a href='http://act.gp/GPLINE_ks' target='_blank'>加入我們的 LINE 好友<br>
+						<img src="images/act.gp_GPLINE_ks.png" /></a>
+					</div>
+			    </div>
+              </div>
+            </div>
+          </form>
+		  </div>		  
+        </div>
+      </div>
+      <div class="place" id="place">
+        <div class="inner">
+          <h2 class="place__title" data-aos="fade-up" data-aos-anchor="#place"><span class="sub">再不積極減碳 <br class="mb-show"><strong>30</strong>年後的新海線<br></span><br><br class="mb-show">可能淹沒我們熟悉的這些人事物...</h2>
+        </div>
+        <div class="place__main" data-aos="fade-up" data-aos-anchor="#place" data-aos-delay="300">
+          <div class="place__slider" id="placeSlider1">
+            <div class="place__control place__control--north">
+              <div class="swiper-button-prev"></div>
+              <div class="place__stamp place__stamp--n show">
+                <!--img(src="images/place-stamp-n.png", alt="北部")-->
+              </div>
+              <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide place__slide place__slide--1" data-area="n">
+                  <p class="place__intro"><span class="text">基隆市 | 簡家蚵仔煎</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--n-1"> </div>
+                    <p class="place__name">基隆市<span class="eng">Keelung</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>6.09</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>4.83</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--2" data-area="n">
+                  <p class="place__intro"><span class="text">臺北市 | 湯姆餘記呢羢西服</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--n-2"> </div>
+                    <p class="place__name">臺北市<span class="eng">Taipei</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>50.2</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>44.5</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--3" data-area="n">
+                  <p class="place__intro"><span class="text">臺北市 | 林三益</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--n-2"> </div>
+                    <p class="place__name">臺北市<span class="eng">Taipei</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>50.2</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>44.5</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--4" data-area="n">
+                  <p class="place__intro"><span class="text">臺北市 | 明星西點咖啡</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--n-2"></div>
+                    <p class="place__name">臺北市<span class="eng">Taipei</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>50.2</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>44.5</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--5" data-area="n">
+                  <p class="place__intro"><span class="text">新竹市 | 老鍋休閒農莊</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--n-3"></div>
+                    <p class="place__name">新竹市<span class="eng">Hsinchu</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>68.4</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>16.4</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--6" data-area="c">
+                  <p class="place__intro"><span class="text">臺中市 | 林異香齋餅店</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--c-1"></div>
+                    <p class="place__name">臺中市<span class="eng">Taichung</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>136.9</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>13.1</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--7" data-area="c">
+                  <p class="place__intro"><span class="text">彰化縣 | 玉珍齋<br class="mb-show">（鹿港本舖）</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--c-2"></div>
+                    <p class="place__name">彰化縣<span class="eng">Changhua</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>390.3</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>18.6</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--8" data-area="s">
+                  <p class="place__intro"><span class="text">臺南市 | 吉利號烏魚子</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--s-1"></div>
+                    <p class="place__name">臺南市<span class="eng">Tainan</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>426.7</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>33.7</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--9" data-area="s">
+                  <p class="place__intro"><span class="text">高雄市 | 汕頭泉成沙茶火鍋<br class="mb-show">（中山總店）</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--s-2"></div>
+                    <p class="place__name">高雄市<span class="eng">Kaohsiung</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>114.5</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>32.4</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide place__slide place__slide--10" data-area="s">
+                  <p class="place__intro"><span class="text">高雄市 | 不二緻果<br class="mb-show">（高雄不二家）</span></p>
+                  <div class="place__detail">
+                    <div class="place__map place__map--s-2"></div>
+                    <p class="place__name">高雄市<span class="eng">Kaohsiung</span></p>
+                    <div class="place__data">
+                      <p class="place__desc"><strong>114.5</strong><span class="unit">平方公里</span><span class="sub">受影響面積</span></p>
+                      <p class="place__desc"><strong>32.4</strong>萬人<span class="sub">受影響人口</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="oldstreet" data-aos="fade-up" data-aos-anchor-placement="top-center">
+        <div class="inner"> 
+          <div class="oldstreet__container">
+            <div class="oldstreet-slider" id="oldStreetSlider">
+              <div class="swiper-container"> 
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide oldstreet__slide"> 
+                    <div class="oldstreet__content oldstreet__content--north">
+                      <div class="oldstreet__paint"><img src="images/old-1.png" alt="淡水老街"></div>
+                      <div class="oldstreet__info"> 
+                        <p class="oldstreet__name">淡水老街</p>
+                        <p class="oldstreet__add">新北市淡水區中正路、重建街、清水街一帶</p>
+                        <p class="oldstreet__desc">淡水是北部最早發展的地區。然而真正的老街並非大家熟知的中正路，而是「重建街」。名稱來由是清朝時，八里發生水災，當地居民無家可歸，遷徙到此重建新生活，故稱「重建街」。如果未來這裡因為海平面上升而淹沒，居民是否會需要另闢土地，再次重建呢？</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide oldstreet__slide"> 
+                    <div class="oldstreet__content oldstreet__content--north">
+                      <div class="oldstreet__paint"><img src="images/old-2.png" alt="迪化街"></div>
+                      <div class="oldstreet__info"> 
+                        <p class="oldstreet__name">迪化街</p>
+                        <p class="oldstreet__add">臺北市大同區迪化街二段</p>
+                        <p class="oldstreet__desc">自1850 年發跡的商業街道，融合南北乾貨、布販、藥商，是叱吒臺北、最熱鬧的商業聚落之一；而後轉為年味氣氛最道地的年貨大街。當2050年來臨時，我們是否能夠再見到年貨大街的興盛景象？</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide oldstreet__slide"> 
+                    <div class="oldstreet__content oldstreet__content--center">
+                      <div class="oldstreet__paint"><img src="images/old-3.png" alt="鹿港老街"></div>
+                      <div class="oldstreet__info"> 
+                        <p class="oldstreet__name">鹿港老街</p>
+                        <p class="oldstreet__add">彰化縣鹿港鎮埔頭街</p>
+                        <p class="oldstreet__desc">
+                          朗朗上口的「一府、二鹿、三艋舺」，請問臨海的鹿港名稱由來為何？<br>A.	早期此地鹿群繁多，故名「鹿仔港」
+                          <br>B.	由當地平埔族稱此地，發音類似「鹿港」
+                          <br>C.	港灣形狀類似鹿角
+                          <br>D.	過去是稻米集散地，米倉為方形稱作「鹿」。
+                          <br><strong>E.	以上皆是</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide oldstreet__slide"> 
+                    <div class="oldstreet__content oldstreet__content--south">
+                      <div class="oldstreet__paint"><img src="images/old-4.png" alt="安平老街"></div>
+                      <div class="oldstreet__info"> 
+                        <p class="oldstreet__name">安平老街</p>
+                        <p class="oldstreet__add">臺南市安平區延平街</p>
+                        <p class="oldstreet__desc">臺南是全臺最早受到外國治理的城市之一，其中安平老街由荷蘭人開發，形成臺灣最早的商店街，又稱「臺灣第一街」、「臺灣街」，顯示安平老街的歷史代表性。走在古色古香的安平老街裡有如時光倒流一般，30年後我們還有機會穿梭其中嗎？</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide oldstreet__slide"> 
+                    <div class="oldstreet__content oldstreet__content--south">
+                      <div class="oldstreet__paint"><img src="images/old-5.png" alt="旗津老街"></div>
+                      <div class="oldstreet__info"> 
+                        <p class="oldstreet__name">旗津老街</p>
+                        <p class="oldstreet__add">高雄市旗津區廟前路</p>
+                        <p class="oldstreet__desc">高雄市的發源地是從旗津開始。靠海的旗津，從1850年代起，清朝與其他國家簽了貿易條約，成為眾商雲集，百業興盛之地。以渡船為特色的旗津，2050年的新海線會改變這個特點嗎？</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-control">
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="invite" data-aos="fade-in"> 
+        <div class="invite__content">
+          <p class="invite__desc" data-aos="fade-up" data-aos-anchor="#pass" data-aos-delay="200">
+            綠色和平邀請你加入臺灣新海線巡禮<br>走過象徵臺灣精神的老店與老街
+            <br><strong>一起用行動關注氣候變遷</strong>
+          </p><a class="btn invite__btn" href="#" data-aos="fade-up" data-aos-anchor="#pass" data-aos-delay="400" data-box="howBox"> <span class="ques-icon"></span><span class="btn-text">如何索取紙本手札</span></a>
+        </div>
+      </div>
+      <div class="overview" id="search">
+        <div class="inner"> 
+          <div class="overview__block overview__block--coast">
+            <div class="overview__content"> 
+              <h2 class="overview__title" data-aos="fade-up" data-aos-anchor="#search" data-aos-delay="0">海線內，海線外</h2>
+              <p class="overview__desc overview__desc--mb-center" data-aos="fade-up" data-aos-anchor="#search" data-aos-delay="300">每次回家都會去的巷口麵店，<br>第一次約會的小公園，</p>
+              <div class="overview__sub" data-aos="fade-up" data-aos-anchor="#search" data-aos-delay="300">
+                <h3 class="overview__subtitle">2050 年，這些地方還在不在？</h3>
+                <p class="overview__desc overview__desc--mb-center">輸入地址，看看你珍貴的回憶，<br>會落在海線內，還是海線外？</p>
+              </div>
+            </div>
+            <div class="overview__pic" data-aos="fade-up" data-aos-anchor="#search" data-aos-delay="600">
+              <div class="overview-coast"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="anchor-map" id="map">         </div>
+      <div class="map"> 
+        <div class="map__container">
+          <iframe class="map__iframe" src=""></iframe>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__info"><img class="footer__logo" src="images/gp-logo.png" alt="">
+            <div class="footer__desc">
+              <p>綠色和平致力於為地球發聲，我們的存在是因為脆弱的地球需要改變、需要行動。<br>但保護地球的使命不能僅靠綠色和平來完成，「您」就是改變世界的力量！</p>
+              <p class="copy">© 2021 Greenpeace</p>
+            </div>
+          </div>
+          <div class="footer__links links">
+            <ul class="links__list">
+              <li class="links__item"><a href="https://www.greenpeace.org/taiwan/?ref=2021-climate-newcoastline_footer">回到主頁</a></li>
+              <li class="links__item"><a href="https://supporter.ea.greenpeace.org/tw/s/donate?campaign=climate&ref=2021-climate-newcoastline_footer" target="_blank">捐款支持</a></li>
+              <li class="links__item"><a href="https://www.greenpeace.org/taiwan/policies/privacy-and-cookies/?ref=2021-climate-newcoastline_footer" target="_blank">隱私政策與個人資料收集聲明</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="lightbox" id="howBox" style="display:none;">
+      <div class="lightbox__cover"> </div>
+      <div class="lightbox__body">
+        <div class="lightbox__inner">
+          <div class="lightbox__header">
+            <h2 class="lightbox__title">如何索取手札？</h2><a class="lightbox__close close-box" href="#"></a>
+          </div>
+          <div class="lightbox__content">
+            <div class="step">
+              <div class="step__cell step__cell--info step__cell--sign">
+                <div class="step__sub-cell step__sub-cell--info">
+                  <p class="step__item">STEP1</p>
+                  <p class="step__title">加入連署<br><strong>取得限量手札</strong></p><a class="step__btn" id="goSign" href="#"><span class="btn-text">立即連署</span></a>
+                </div>
+                <div class="step__sub-cell step__sub-cell--detail">
+                  <p class="step__desc">
+                    為了減緩氣候變遷，綠色和平正積極推動<br>縣市首長<strong>宣示氣候緊急</strong>，邀請您加入連署
+                    <br>呼籲您的縣/市長一同減碳，守住臺灣海岸線。
+                  </p>
+                </div>
+              </div>
+              <div class="step__cell step__cell--pic"><img src="images/thx-menual-out.png" alt="限量手札"></div>
+            </div>
+            <div class="step">
+              <div class="step__cell step__cell--info">
+                <div class="step__sub-cell step__sub-cell--info">
+                  <p class="step__item">STEP2</p>
+                  <p class="step__title">完成巡禮<br><strong class="second">獲得限量童書繪本</strong></p>
+                </div>
+                <div class="step__sub-cell step__sub-cell--detail">
+                  <p class="step__desc">依手札內指示<strong class="second">完成活動</strong>，即可領取限量童<br>書＜我家不見了＞一本。</p>
+                </div>
+              </div>
+              <div class="step__cell step__cell--pic step__cell--pic-l"><img src="images/step-2.png" alt="＜我家不見了＞繪本"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lightbox" id="emergencyBox" style="display: none;">
+      <div class="lightbox__cover"> </div>
+      <div class="lightbox__body emergency">
+        <div class="lightbox__inner">
+          <div class="lightbox__header emergency__header">
+            <h2 class="emergency__title lightbox__title">什麼是<strong>氣候緊急</strong>？</h2><a class="lightbox__close close-box" href="#"></a>
+          </div>
+          <div class="emergency__inner">
+            <div class="emergency__content">
+              <p class="emergency__desc">氣候緊急表示氣候變遷的危害程度已經影響到民眾生命與財產安全，需要採取緊急行動加速減輕氣候帶來的衝擊，目前全球已有超過1,700個政府單位，包含城市與國家層級，宣布進入「氣候緊急」，綠色和平也將持續要求地方政府宣示氣候緊急，並採取行動包含：</p>
+              <ul class="emergency__list">
+                <li class="emergency__item"><span class="emergency__icon emergency__icon--file"></span>
+                  <p class="emergency__desc">全面評估並且揭露城市氣候風險，<br>發展因地制宜的氣候調適策略</p>
+                </li>
+                <li class="emergency__item"><span class="emergency__icon emergency__icon--up"></span>
+                  <p class="emergency__desc">制定符合巴黎氣候協定的溫室氣體減量目標，<br class="mb-hide">幫助控制全球升溫於1.5 °C</p>
+                </li>
+                <li class="emergency__item"><span class="emergency__icon emergency__icon--expend"></span>
+                  <p class="emergency__desc">擴大再生能源使用佔比，<br>訂定地方再生能源目標與執行計畫</p>
+                </li>
+                <li class="emergency__item"><span class="emergency__icon emergency__icon--speaker"></span>
+                  <p class="emergency__desc">要求中央政府宣布國家級的氣候緊急狀態，<br class="mb-hide">提出 2050 年碳中和目標</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lightbox" id="thxBox" style="display:none;">
+      <div class="lightbox__cover"> </div>
+      <div class="lightbox__body">
+        <div class="lightbox__inner">
+          <div class="lightbox__header">
+            <h2 class="lightbox__title">感謝您加入連署！</h2><a class="lightbox__close close-box" href="#"></a>
+          </div>
+          <div class="lightbox__content">
+            <div class="thx"> 
+              <div class="thx__main">
+                <p class="thx__desc"><strong>「2050 臺灣新海線巡禮手札」</strong>首刷與二刷 1500 份已全數索取完畢<br>歡迎點擊下方連結下載電子檔。</p>
+                                
+                <div class="form thx__form form--md">
+                  <!--
+                  <p class="form__desc">您的收件資訊</p>
+                  <ul class="form__list">
+                    <li class="form__item">
+                      <div class="form__group">
+                        <div class="form__wrap form__wrap--md">
+                          <label class="form__label">郵遞區號</label>
+                          <input class="form__input" id="zip" type="number">
+                        </div>
+                        <div class="form__wrap">
+                          <label class="form__label">地址</label>
+                          <input class="form__input" id="address" type="text">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="form__item">
+                      <p class="form__hint">// 響應環保不浪費，索取後請善加利用 // </p>
+					  <p class="form__hint" style="color:red;">數量有限，送完為止</p>
+                    </li>
+                  </ul>-->
+                  <p class="form__control">
+        					<button class="form__btn form__btn--cancel close-box" id="denyBtn">不索取</button>
+        					<button class="form__btn form__btn--check" id="sendBtn">點擊下載</button>
+        				  </p>
+                </div>
+              
+              </div>
+              <div class="thx__pic"> <img src="images/thx-menual.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        // 燈箱控制
+        $('[data-box]').on('click', function(e){
+          e.preventDefault();
+          var boxID = '#' + $(this).attr('data-box');
+          $('.lightbox').hide();
+          $(boxID).fadeIn();
+        });
+      
+        $('#goSign').on('click', function(e){
+          e.preventDefault();
+          $('.lightbox').fadeOut();
+          $('html, body').animate({scrollTop: $('#sign').offset().top});
+        });
+      
+        $('.close-box, .lightbox__cover').on('click', function(e){
+          e.preventDefault();
+          $('.lightbox').fadeOut();
+        });
+      
+        //sign-form 表單送出
+        $('#submitBtn').on('click', function(e){			
+          e.preventDefault();      
+		  signSubmit();
+        });
+				
+		//thxBox 表單送出
+		$('#sendBtn').on('click', function(e){
+			//console.log('sendBtn');
+			e.preventDefault();
+			//addressSubmit(1);
+			window.open('2050臺灣新海線巡禮手札_Greenpeace 綠色和平.pdf');
+		});	
+		$('#denyBtn').on('click', function(e){
+			//console.log('denyBtn');
+			e.preventDefault();
+			addressSubmit(0);
+		});
+				
+		$('.close-box').on('click', function(e){			
+			e.preventDefault();
+			addressSubmit(0);
+		});
+			
+        //分享        
+        //若此規則無法取得正確分享網址，請直接把網址寫進 url         
+		$('#shareFB').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://act.gp/3sqClLn');
+        $('#shareLINE').attr('href', 'https://lineit.line.me/share/ui?url=https://act.gp/3tNk6Qw');  
+      });
+    </script>
+    <script>
+      if( window.matchMedia('(max-width: 780px)').matches ){
+        //document.getElementById("BGVideo").innerHTML = '<source src="video/loop-mb.mp4" type="video/mp4">';
+        //document.querySelectorAll('#BGVideo source')[0].src = 'video/loop-mb.mp4'
+      }else{
+        //document.getElementById("BGVideo").innerHTML = '<source src="video/loop-pc.mp4" type="video/mp4">';
+        //document.querySelectorAll('#BGVideo source')[0].src = 'video/loop-pc.mp4'
+      }
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+<!-- Form init & Validation -->
+<script src="https://change.greenpeace.org.tw/2020/petition/zh-TW.2020.climate.emergency.signup.mc/js/mailcheck.min.js"></script>
+<script>      
+// create the year options
+let currYear = new Date().getFullYear()
+for (var i = 0; i < 100; i++) {
+	let option = `<option value="${currYear-i}-01-01">${currYear-i}</option>`
+	$('#Birthdate').append(option);        
+}
+
+function checkAddress() {	
+	$('.error-message').remove();
+	let pass = true;
+
+	if (!zip.value) {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#zip");
+	}
+
+	if (!address.value) {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#address");
+	}
+	
+	return pass;
+}
+
+function checkInput() {
+	//console.log('checkInput');
+	$('.error-message').remove();
+	let pass = true;
+
+	if (!LastName.value) {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#LastName");
+	}
+	else if (! /^[\u4e00-\u9fa5_a-zA-Z_ ]{1,40}$/i.test(LastName.value) || ! /^[\u4e00-\u9fa5_a-zA-Z_ ]{1,40}$/i.test(LastName.value)) {
+		pass = false;
+		$(`<span class="error-message">請不要輸入數字或符號</span>`).insertAfter("#LastName");
+	}
+
+	if (!FirstName.value) {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#FirstName");
+	}
+	else if (! /^[\u4e00-\u9fa5_a-zA-Z_ ]{1,40}$/i.test(FirstName.value) || ! /^[\u4e00-\u9fa5_a-zA-Z_ ]{1,40}$/i.test(LastName.value)) {
+		pass = false;
+		$(`<span class="error-message">請不要輸入數字或符號</span>`).insertAfter("#FirstName");
+	}
+
+	if (!Email.value) {
+		pass = false;
+		$(`<span class="error-message email-error-message">必填欄位</span>`).insertAfter("#Email");
+	}
+	else if (! /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/i.test(Email.value)) {
+		pass = false;
+		$(`<span class="error-message email-error-message">Email 格式錯誤</span>`).insertAfter("#Email");
+	}
+
+	if (!MobilePhone.value && window.location.href.indexOf("utm_source=dd")<0) {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#MobilePhone");
+	}
+	else if (MobilePhone.value 
+			&& ! /^(0|886|\+886)?(9\d{8})$/.test(MobilePhone.value) 
+			&& ! /^(0|886|\+886){1}[3-8]-?\d{6,8}$/.test(MobilePhone.value)
+			&& ! /^(0|886|\+886){1}[2]-?\d{8}$/.test(MobilePhone.value)) {
+		pass = false;
+		$(`<span class="error-message">電話格式不正確，格式應為 0912345678 和 02-23456789</span>`).insertAfter("#MobilePhone");
+	}
+
+	if (Birthdate.value == "") {
+		pass = false;
+		$(`<span class="error-message">必填欄位</span>`).insertAfter("#Birthdate");
+	}
+
+	return pass;
+}  
+
+function checkEmail() {
+    let domains = [
+		"me.com",
+		"outlook.com",
+		"netvigator.com",
+		"cloud.com",
+		"live.hk",
+		"msn.com",
+		"gmail.com",
+		"hotmail.com",
+		"ymail.com",
+		"yahoo.com",
+		"yahoo.com.tw",
+		"yahoo.com.hk"
+	];
+	let topLevelDomains = ["com", "net", "org"];
+	let email = document.getElementById("Email");
+
+	email.onblur = function(){
+		if (!document.getElementById("email-suggestion")) {
+			Mailcheck.run({
+				email: email.value,
+				domains: domains,                       // optional
+				topLevelDomains: topLevelDomains,       // optional
+				suggested: function(suggestion) {		
+					email.insertAdjacentHTML('afterend', `<div id="email-suggestion" style="font-size:small; color:blue; ">您想輸入的是 <strong id="emailSuggestion">${suggestion.full}</strong> 嗎？</div>`);
+										
+					document.querySelectorAll(".email-error-message").forEach((elem) => elem.remove());
+					
+					document.getElementById("email-suggestion").onclick = function() {
+						email.value = document.getElementById("emailSuggestion").innerText;
+						document.getElementById("email-suggestion").remove();
+						
+					};
+				},
+				empty: function() {
+					this.emailSuggestion = null;
+				}
+			});
+		}
+	};
+}
+
+function addressSubmit(send) {	
+    if (send && !checkAddress())
+        return;
+	
+	let formData = new FormData();
+	document.querySelectorAll("#sign-form input,select").forEach(function (el, idx) {
+		let v = null
+		if (el.type==="checkbox") {
+			v = el.checked;
+		} else {
+			v = el.value;
+		}
+
+		formData.append(el.name, v);
+		//console.log("Use", el.name, v);
+	});
+	formData.append("city", $('#selectArea :selected').text());
+	formData.append("CampaignData1__c", $('#selectArea :selected').text());
+	formData.append("zip", $('#zip').val());
+	formData.append("address", $('#address').val());
+		
+	// send to google sheet
+	fetch("https://script.google.com/macros/s/AKfycbzUblnVF1eqUJ4ZnRkwPJLOWAf-boRNqLKILotqXhMvMBNZWqYmDA5Pvresukv7c60E/exec", {
+		method: 'POST',
+		body: formData
+	});
+	$('.lightbox').fadeOut();
+	$('.form__main').hide();
+	$('.form__done').show();
+}
+
+function signSubmit() {
+    if (!checkInput())
+        return;
+
+    showFullPageLoading();
+	let formData = new FormData();
+	document.querySelectorAll("#sign-form input,select").forEach(function (el, idx) {
+		let v = null
+		if (el.type==="checkbox") {
+			v = el.checked;
+		} else {
+			v = el.value;
+		}
+
+		formData.append(el.name, v);
+		//console.log("Use", el.name, v);
+	});
+	formData.append("city", $('#selectArea :selected').text());
+	formData.append("CampaignData1__c", $('#selectArea :selected').text());
+
+	fetch(document.querySelector("#sign-form").action, {
+		method: 'POST',
+		body: formData
+	})
+	.then(response => {return response.json()})
+	.then(response => {            
+		if (response) {              
+			$('#thxBox').show();
+			
+			if (response.Supporter) {
+				// add tracking code here
+				sendPetitionTracking('2021-climate_emergency');
+			}
+		}
+		hideFullPageLoading();
+	})
+	.catch(error => {
+		console.log(error);
+		hideFullPageLoading();
+		// display the error message                      
+	});  
+}
+				 
+/**
+ * Send the tracking event to the ga
+ * @param  {string} eventLabel The ga trakcing name, normally it will be the short campaign name. ex 2019-plastic_retailer
+ * @param  {[type]} eventValue Could be empty
+ * @return {[type]}            [description]
+*/
+function sendPetitionTracking(eventLabel, eventValue) {
+	window.dataLayer = window.dataLayer || [];
+
+	window.dataLayer.push({
+		'event': 'gaEvent',
+		'eventCategory': 'petitions',
+		'eventAction': 'signup',
+		'eventLabel': eventLabel,
+		'eventValue' : eventValue
+	});
+
+	window.dataLayer.push({
+		'event': 'fbqEvent',
+		'contentName': eventLabel,
+		'contentCategory': 'Petition Signup'
+	});
+
+	window.uetq = window.uetq || [];  
+	window.uetq.push ('event', 'signup', {'event_category': 'petitions', 'event_label': eventLabel, 'event_value': 0});        
+}
+
+/**
+ * Show the full page loading
+*/
+const showFullPageLoading = () => {
+	if ( !document.querySelector("#page-loading")) {
+	  document.querySelector("body").insertAdjacentHTML('beforeend', `
+		<div id="page-loading" class="hide">
+		<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+		</div>`);
+	}
+
+	setTimeout(() => { // to enable the transition
+	  document.querySelector("#page-loading").classList.remove("hide")
+	}, 0)
+}
+/**
+ * Hide the full page loading
+*/
+const hideFullPageLoading = () => {
+	document.querySelector("#page-loading").classList.add("hide")
+
+	setTimeout(() => {
+	  document.querySelector("#page-loading").remove()
+	}, 1100)
+}            
+
+/**
+ * Hide the donatin btn in DD page
+*/
+const hideDdBtn = () => {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if (urlParams.get('utm_source') === "dd") {
+	  $('.is-hidden-at-dd-page-only').hide();
+	  $('.is-show-at-dd-page-only').show();
+	  $('#MobilePhone').removeAttr("required"); //移除電話欄位 required Attr        
+			  
+	  if (urlParams.get('utm_content') === "tp") {
+		$('.line-tp').show();
+		$('.line-tc').hide();
+		$('.line-ks').hide();
+	  } else if (urlParams.get('utm_content') === "tc") {
+		$('.line-tp').hide();
+		$('.line-tc').show();
+		$('.line-ks').hide();
+	  } else {
+		$('.line-tp').hide();
+		$('.line-tc').hide();
+		$('.line-ks').show();
+	  }
+	}
+}  
+
+$(document).ready(function() {       
+    checkEmail();
+	hideDdBtn();
+	//$('#thxBox').show();
+});
+</script>  
+</html>
